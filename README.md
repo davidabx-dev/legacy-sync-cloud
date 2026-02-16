@@ -94,7 +94,9 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
 8. **Monitoramento em Background (Opcional):**
    >Para rodar o processo sem travar o terminal (Windows PowerShell):
    ```bash
-   Start-Job -ScriptBlock { java -jar target/legacy-sync-0.0.1-SNAPSHOT.jar }
+   $env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-17.0.18.8-hotspot"
+   $env:Path += ";$env:JAVA_HOME\bin"
+   java -jar target/legacy-sync-0.0.1-SNAPSHOT.jar
    ```
 
 ---
