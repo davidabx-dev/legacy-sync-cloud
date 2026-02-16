@@ -1,0 +1,40 @@
+services:
+  # Nosso BD (banco de dados) principal
+  postgres:
+    image: postgres:15-alpine
+    container_name: legacy-sync-db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: tqi_challenge_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Simulador do sistema corporativo legado
+  ftp-server:
+    image: delfer/alpine-ftp-server
+    container_name: legacy-ftp
+    environment:
+      USERS: "admin|admin"
+    ports:
+      - "21:21"
+      - "21000-21010:21000-21010"
+    volumes:
+      - ./ftp-data:/ftp/admin
+
+  # Emulador da nuvem local
+  localstack:
+    image: localstack/localstack
+    container_name: local-aws
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,sqs
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+volumes:
+  postgres_data:
