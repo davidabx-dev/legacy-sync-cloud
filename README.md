@@ -1,6 +1,9 @@
-# 🏦 Legacy Sync Cloud - Integração Bancária Automática
+<div align="center">
 
-Desenvolvido por **DavidABx** 🚀  
+# 🏦 Legacy Sync Cloud - Integração Bancária Automática
+</div>
+
+>Desenvolvido por **DavidABx**
 *Estudante de GTI (Gestão da Tecnologia da Informação) e Desenvolvedor Back-end.*
 
 ---
