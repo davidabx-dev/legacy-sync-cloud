@@ -86,7 +86,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
 7. **Executar Testes de Qualidade:**
    >Valide a lógica de negócio e as integrações:
    ```bash
-   mvn test
+   .\.maven\apache-maven-3.9.6\bin\mvn test
    ```
 
 ---
