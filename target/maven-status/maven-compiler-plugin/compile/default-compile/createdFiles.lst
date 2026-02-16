@@ -1,9 +1,0 @@
-com\davidabx\legacy\repository\TransactionRepository.class
-com\davidabx\legacy\controller\TransactionController.class
-com\davidabx\legacy\LegacySyncApplication.class
-com\davidabx\legacy\service\LegacySyncWorker.class
-com\davidabx\legacy\domain\Transaction$TransactionBuilder.class
-com\davidabx\legacy\domain\Transaction.class
-com\davidabx\legacy\service\TransactionProcessorService.class
-com\davidabx\legacy\service\FtpIntegrationService.class
-com\davidabx\legacy\service\AwsIntegrationService.class
