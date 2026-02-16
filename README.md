@@ -41,7 +41,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    ```bash
    git clone [https://github.com/davidabx-dev/legacy-sync-cloud.git](https://github.com/davidabx-dev/legacy-sync-cloud.git)
    cd legacy-sync-cloud
-    ```
+   ```
 
 ---
 
@@ -49,15 +49,15 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    >Inicie o **BD (banco de dados)** PostgreSQL e o LocalStack (AWS SQS):
    ```bash
    docker-compose up -d
-    ```
+   ```
 
 ---
 
 3. **Limpar e Empacotar (Maven):**
    >Gere o **JAR (Java Archive)** executável com o manifesto correto:
    ```bash
-   mvn clean package
-    ```
+   .\.maven\apache-maven-3.9.6\bin\mvn clean package
+   ```
 
 ---
 
@@ -65,7 +65,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    >Inicie o motor de sincronização de forma profissional:
    ```bash
    java -jar target/legacy-sync-0.0.1-SNAPSHOT.jar
-    ```
+   ```
 
 ---
 
@@ -79,7 +79,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    >Verifique os registros diretamente no container do **BD (banco de dados)**:
    ```bash
    docker exec -it legacy-sync-db psql -U root -d tqi_challenge_db -c "SELECT status, count(*) FROM tb_transaction GROUP BY status;"
-    ```
+   ```
 
 ---
 
@@ -87,7 +87,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    >Valide a lógica de negócio e as integrações:
    ```bash
    mvn test
-    ```
+   ```
 
 ---
 
@@ -95,7 +95,7 @@ Siga este guia passo a passo para subir o ecossistema completo de integração:
    >Para rodar o processo sem travar o terminal (Windows PowerShell):
    ```bash
    Start-Job -ScriptBlock { java -jar target/legacy-sync-0.0.1-SNAPSHOT.jar }
-    ```
+   ```
 
 ---
 
